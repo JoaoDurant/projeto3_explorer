@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Poppins&display=swap" rel="stylesheet">
+    <title>Formulario</title>
+</head>
+<body>
+        <header>
+            <h1>Crie e compartilhe seu evento.</h1>
+            <p>O primeiro passo, é preencher esse formulário de inscrição.</p>
+        </header>
+        <form id="eventForm">
+            <fieldset>
+                <legend>Informações do Evento</legend>
+                <div class="input-wrapper">
+                    <label for="eventTitle">Título do evento <span class="descriptionLabel">(mínimo 8 caracteres)</span></label>
+                    <input required minlength="8" type="text" name="titelEvent" id="eventTitle">
+                </div>
+                
+                <div class="input-wrapper">
+                    <label for="eventLink">Link do evento <span class="descriptionLabel">(comece com https://)</span></label>
+                    <input required type="url" name="link" id="eventLink">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="wppNumbers">Whatsapp para contato <span class="descriptionLabel">(somente números)</span></label>
+                    <input required type="number" name="wpp" id="wppNumbers">
+                </div>
+                    
+                <div class="input-wrapper">
+                    <label for="extraInformation">Informações extras</label>
+                    <textarea name="information" id="extraInformation"></textarea>
+                </div>
+                    
+                <div class="input-wrapper">
+                    <label for="category" >Categoria</label>
+                    <select name="category" id="category">
+                        <option disabled selected value="type"> <span>Tipo de categoria</span></option>
+                        <option value="music">Musica</option>
+                        <option value="shows">Shows</option>
+                        <option value="locate">Local</option>
+                    </select>
+                </div>
+        </fieldset>
+        <fieldset>
+            <legend>Privacidade</legend>
+            <div class="input-wrapper">
+                <label for="email">E-mail do administrador <span class="descriptionLabel">(digite um email válido)</span></label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div class="input-wrapper">
+                <label for="participantPassword">Senha de acesso para os participantes <span class="descriptionLabel">(mínimo 8 caracteres)</span></label>
+                <input required minlength="8" type="password" name="password" id="participantPassword">
+            </div>
+            <div id="input-checkBox">
+                <input type="checkbox" name="privateEvent" id="privateEvent">
+                <label for="privateEvent">Evento privado</label>           
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Dia e hora</legend>
+            <div id="date-input">
+                <div class="input-wrapper" id="date">
+                    <label for="date">Data</label>
+                    <input required type="date" name="date" id="date">
+                </div>
+                <div class="input-wrapper" id="start">
+                    <label for="startTime">Das</label>
+                        <input required type="time" placeholder="19:00" name="startTime" id="startTime">
+                </div>
+                <div class="input-wrapper" id="end">
+                    <label for="endTime">Até</label>
+                        <input required type="time" placeholder="20:00" name="endTime" id="endTime">
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    <footer id="btnDiv">
+        <input form="eventForm" id="btn" type="submit" value="Salvar evento">
+    </footer>
+</body>
+</html>
